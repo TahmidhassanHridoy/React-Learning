@@ -29,41 +29,36 @@ export class From extends Component {
   };
 
   handleSubmit = (event) => {
-    alert("${this.state.username},${this.state.comments},${this.state.topic}");
+    alert(`${this.state.username} ${this.state.comments} ${this.state.topic}`);
     event.preventDefault();
   };
 
   render() {
+    const { username, topic, comments } = this.state;
     return (
-      <div>
-        <h1>From Component</h1>
-        <form onClick={this.handleSubmit}>
-          <div>
-            <label> Username </label>
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.HandleUsernameChange}
-            />
-          </div>
-          <div>
-            <label>Comments </label>
-            <textarea
-              value={this.state.comments}
-              onChange={this.handleCommentsChange}
-            ></textarea>
-          </div>
-          <div>
-            <label> Topic </label>
-            <select value={this.state.topic} onChange={this.handleTopicChange}>
-              <option value="react">React</option>
-              <option value="angular">Angular</option>
-              <option value="vue">Vue</option>
-            </select>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+      <form onSubmit={this.handleSubmit}>
+        <div>
+          <label> Username </label>
+          <input
+            type="text"
+            value={username}
+            onChange={this.HandleUsernameChange}
+          />
+        </div>
+        <div>
+          <label>Comments </label>
+          <textarea value={comments} onChange={this.handleCommentsChange} />
+        </div>
+        <div>
+          <label> Topic </label>
+          <select value={topic} onChange={this.handleTopicChange}>
+            <option value="react">React</option>
+            <option value="angular">Angular</option>
+            <option value="vue">Vue</option>
+          </select>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
     );
   }
 }

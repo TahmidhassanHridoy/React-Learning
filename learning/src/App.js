@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css";
 import "./appStyle.css";
-import From from "./components/From";
+import LifeCycleA from "./components/LifeCycleA";
 
 function App() {
   return (
     <div className="App">
-      <From />
+      <LifeCycleA />
+      {/* <From /> */}
       {/* <Stylesheet primary={true} /> */}
       {/* <Inline /> */}
       {/* <h1 className="error">Error</h1> */}
